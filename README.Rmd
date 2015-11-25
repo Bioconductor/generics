@@ -78,11 +78,33 @@ CRAN <- c(
 "testthat",
 "roxygen2")
 
+# Bioc Packages from top 25 of https://www.bioconductor.org/packages/stats/
 Bioc <- c(
-"Biobase",
+"BiocInstaller",
+"BiocGenerics",
 "IRanges",
+"Biobase",
 "AnnotationDbi",
-"BiocGenerics")
+"GenomeInfoDb",
+"S4Vectors",
+"zlibbioc",
+"Biostrings",
+"limma",
+"XVector",
+"GenomicRanges",
+"BiocParallel",
+"annotate",
+"Rsamtools",
+"genefilter",
+"rtracklayer",
+"biomaRt",
+"graph",
+"GenomicAlignments",
+"GenomicFeatures",
+"preprocessCore",
+"affy",
+"BSgenome",
+"geneplotter")
 
 all <- expand.grid(CRAN = CRAN, Bioconductor = Bioc, stringsAsFactors = FALSE)
 all$conflicts <- Map(conflicts2, all[[1]], all[[2]])
