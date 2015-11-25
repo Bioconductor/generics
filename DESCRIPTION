@@ -1,0 +1,11 @@
+Package: generic
+Title: A centralized repository for S4 generic functions.
+Description: Provides a centralized location for S4 generic functions to
+prevent collisions due to the same generic method being defined in multiple
+packages.
+Version: 0.0.1
+Author: The Bioconductor Dev Team
+Maintainer: Bioconductor Package Maintainer <maintainer@bioconductor.org>
+Depends: R (>= 3.3.0)
+License: Artistic-2.0
+LazyData: true
