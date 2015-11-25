@@ -107,11 +107,19 @@ Bioc <- c(
 "geneplotter")
 
 all <- expand.grid(CRAN = CRAN, Bioconductor = Bioc, stringsAsFactors = FALSE)
+
 all$conflicts <- Map(conflicts2, all[[1]], all[[2]])
 
-knitr::kable(all[lengths(all$conflicts) > 0, ])
-all$`S3 Generics` <- Map(function(package, funs) Filter(function(x) pryr:::is_s3_generic(x, env = asNamespace(package)), funs),
-                         all$CRAN, all$conflicts)
-all$`S4 Generics` <- Map(function(package, funs) Filter(function(x) isGeneric(x, where = asNamespace(package)), funs), all$CRAN, all$conflicts)
+all$`S3 Generics` <- Map(function(package, funs)
+    Filter(function(x) pryr:::is_s3_generic(x, env = asNamespace(package)), funs),
+    all$CRAN, all$conflicts)
+
+all$`S4 Generics` <- Map(function(package, funs)
+    Filter(function(x) isGeneric(x, where = asNamespace(package)), funs),
+    all$CRAN, all$conflicts)
+
+all$normal <- Map(function(conflicts, S3, S4) conflicts[!(conflicts %in% S3 | conflicts %in% S4)],
+    all$conflicts, all$`S3 Generics`, all$`S4 Generics`)
+
 knitr::kable(all[lengths(all$conflicts) > 0, ])
 ```
