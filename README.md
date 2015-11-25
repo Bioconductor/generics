@@ -71,13 +71,13 @@ Bioc <- c(
 "AnnotationDbi",
 "BiocGenerics")
 
-all <- expand.grid(CRAN, Bioc)
-all$conflicts <- Map(conflicts2, as.character(all[[1]]), as.character(all[[2]]))
+all <- expand.grid(CRAN = CRAN, Bioconductor = Bioc, stringsAsFactors = FALSE)
+all$conflicts <- Map(conflicts2, all[[1]], all[[2]])
 
 knitr::kable(all[lengths(all$conflicts) > 0, ])
 ```
 
-|     | Var1         | Var2          | conflicts                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|     | CRAN         | Bioconductor  | conflicts                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |-----|:-------------|:--------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 2   | RMySQL       | Biobase       | show                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | 4   | XLConnect    | Biobase       | show                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |

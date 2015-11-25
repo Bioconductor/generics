@@ -84,8 +84,8 @@ Bioc <- c(
 "AnnotationDbi",
 "BiocGenerics")
 
-all <- expand.grid(CRAN, Bioc)
-all$conflicts <- Map(conflicts2, as.character(all[[1]]), as.character(all[[2]]))
+all <- expand.grid(CRAN = CRAN, Bioconductor = Bioc, stringsAsFactors = FALSE)
+all$conflicts <- Map(conflicts2, all[[1]], all[[2]])
 
 knitr::kable(all[lengths(all$conflicts) > 0, ])
 ```
