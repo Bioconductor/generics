@@ -1,0 +1,91 @@
+---
+output:
+  md_document:
+    variant: markdown_github
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+# Summary of Conflicting Functions #
+```{r}
+# Get all conflicting functions from two namespaces
+conflicts2 <- function(x, y) {
+    Filter(Negate(function(x) grepl("\\.__T__", x)),
+           intersect(getNamespaceExports(x), getNamespaceExports(y)))
+}
+
+# CRAN packages from https://support.rstudio.com/hc/en-us/articles/201057987-Quick-list-of-useful-R-packages
+CRAN <- c(
+"base",
+"RMySQL",
+"RSQLite",
+"XLConnect",
+"xlsx",
+"foreign",
+"readr",
+"haven",
+"dplyr",
+"tidyr",
+"stringr",
+"lubridate",
+"ggplot2",
+"ggvis",
+"rgl",
+"htmlwidgets",
+"leaflet",
+"dygraphs",
+"DT",
+"DiagrammeR",
+"networkD3",
+"googleVis",
+"car",
+"mgcv",
+"lme4",
+"nlme",
+"randomForest",
+"multcomp",
+"vcd",
+"glmnet",
+"survival",
+"caret",
+"shiny",
+"rmarkdown",
+"knitr",
+"xtable",
+"sp",
+"maptools",
+"maps",
+"ggmap",
+"zoo",
+"xts",
+"quantmod",
+"Rcpp",
+"data.table",
+"parallel",
+"XML",
+"jsonlite",
+"httr",
+"rvest",
+"devtools",
+"testthat",
+"roxygen2")
+
+Bioc <- c(
+"Biobase",
+"IRanges",
+"AnnotationDbi",
+"BiocGenerics")
+
+all <- expand.grid(CRAN, Bioc)
+all$conflicts <- Map(conflicts2, as.character(all[[1]]), as.character(all[[2]]))
+
+knitr::kable(all[lengths(all$conflicts) > 0, ])
+```
