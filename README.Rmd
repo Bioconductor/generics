@@ -136,5 +136,5 @@ all$`S4 Generics` <- Map(function(package, funs)
 all$normal <- Map(function(conflicts, S3, S4) conflicts[!(conflicts %in% S3 | conflicts %in% S4)],
     all$conflicts, all$`S3 Generics`, all$`S4 Generics`)
 
-knitr::kable(all[lengths(all$conflicts) > 0, ])
+knitr::kable(all[lengths(all$conflicts) > 0, ], row.names = FALSE)
 ```
