@@ -110,6 +110,21 @@ all <- expand.grid(CRAN = CRAN, Bioconductor = Bioc, stringsAsFactors = FALSE)
 
 all$conflicts <- Map(conflicts2, all[[1]], all[[2]])
 
+# Filter out all the generics defined in methods
+gens <- getGenerics(where=asNamespace("methods"))
+gen_defs <- Map(function(f, package)
+    get(f, envir = asNamespace(package), mode = "function"),
+    gens@.Data, gens@package)
+
+filter_methods <- function(x, package) {
+    if (!length(x)) return(x)
+    funs <- lapply(x, get, envir = asNamespace(package), mode = "function")
+    in_methods <- vapply(funs, function(x) any(as.logical(lapply(gen_defs, identical, x))), logical(1))
+    x[!in_methods]
+}
+
+all$conflicts <- Map(filter_methods, all$conflicts, all$CRAN)
+
 all$`S3 Generics` <- Map(function(package, funs)
     Filter(function(x) pryr:::is_s3_generic(x, env = asNamespace(package)), funs),
     all$CRAN, all$conflicts)
