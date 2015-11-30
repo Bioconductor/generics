@@ -113,15 +113,22 @@ all <- expand.grid(CRAN = CRAN, Bioconductor = Bioc, stringsAsFactors = FALSE)
 all$conflicts <- Map(conflicts2, all[[1]], all[[2]])
 
 # Filter out all the generics defined in methods
-gens <- getGenerics(where=asNamespace("methods"))
-gen_defs <- Map(function(f, package)
-    get(f, envir = asNamespace(package), mode = "function"),
-    gens@.Data, gens@package)
+
+gen_defs <- function(namespace) {
+    gens <- getGenerics(where=asNamespace(namespace))
+
+    Map(function(f, package)
+        get(f, envir = asNamespace(package), mode = "function"),
+        gens@.Data, gens@package)
+}
+
+filter_defs <- c(gen_defs("methods"),
+                 gen_defs("BiocGenerics"))
 
 filter_methods <- function(x, package) {
     if (!length(x)) return(x)
     funs <- lapply(x, get, envir = asNamespace(package), mode = "function")
-    in_methods <- vapply(funs, function(x) any(as.logical(lapply(gen_defs, identical, x))), logical(1))
+    in_methods <- vapply(funs, function(x) any(as.logical(lapply(filter_defs, function(xx) identical(xx, x) || .hasSlot(xx, "default") && identical(xx@default@.Data, x)))), logical(1))
     x[!in_methods]
 }
 
