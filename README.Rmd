@@ -25,6 +25,8 @@ conflicts2 <- function(x, y) {
 # CRAN packages from https://support.rstudio.com/hc/en-us/articles/201057987-Quick-list-of-useful-R-packages
 CRAN <- c(
 "base",
+"stats",
+"graphics",
 "RMySQL",
 "RSQLite",
 "XLConnect",
@@ -136,5 +138,17 @@ all$`S4 Generics` <- Map(function(package, funs)
 all$normal <- Map(function(conflicts, S3, S4) conflicts[!(conflicts %in% S3 | conflicts %in% S4)],
     all$conflicts, all$`S3 Generics`, all$`S4 Generics`)
 
-knitr::kable(all[lengths(all$conflicts) > 0, ], row.names = FALSE)
+res <- all[lengths(all$conflicts) > 0, ]
+knitr::kable(res, row.names = FALSE)
+```
+
+## Tabulated by function ##
+```{r, results = 'asis'}
+library(tidyr)
+res2 <- unique(unnest(res, conflicts)[c("CRAN", "conflicts")])
+res3 <- spread(res2, conflicts, CRAN, fill="")
+res4 <- lapply(res3, function(x) x[x != ""])
+do.call(`cat`, c(Map(function(nme, pkgs) {
+  paste0(" - ", nme, " - ", paste0(pkgs, collapse = ", "))
+    }, names(res4), res4, USE.NAMES = FALSE), list(sep = "\n")))
 ```
