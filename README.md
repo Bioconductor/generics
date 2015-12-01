@@ -1,4 +1,6 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+[![Travis-CI Build Status](https://travis-ci.org/Bioconductor/generics.svg?branch=master)](https://travis-ci.org/Bioconductor/generics) [![Coverage Status](https://img.shields.io/codecov/c/github/Bioconductor/generics/master.svg)](https://codecov.io/github/Bioconductor/generics?branch=master)
+
 Summary of Conflicting Functions
 ================================
 
@@ -94,6 +96,424 @@ Bioc <- c(
 "affy",
 "BSgenome",
 "geneplotter")
+
+invisible(lapply(c(CRAN, Bioc), library, character.only = TRUE))
+#> Loading required package: DBI
+#> 
+#> Attaching package: 'RSQLite'
+#> 
+#> The following object is masked from 'package:RMySQL':
+#> 
+#>     isIdCurrent
+#> 
+#> Loading required package: XLConnectJars
+#> XLConnect 0.2-11 by Mirai Solutions GmbH [aut],
+#>   Martin Studer [cre],
+#>   The Apache Software Foundation [ctb, cph] (Apache POI, Apache Commons
+#>     Codec),
+#>   Stephen Colebourne [ctb, cph] (Joda-Time Java library)
+#> http://www.mirai-solutions.com ,
+#> http://miraisolutions.wordpress.com
+#> Loading required package: rJava
+#> Loading required package: xlsxjars
+#> 
+#> Attaching package: 'xlsx'
+#> 
+#> The following objects are masked from 'package:XLConnect':
+#> 
+#>     createFreezePane, createSheet, createSplitPane, getCellStyle,
+#>     getSheets, loadWorkbook, removeSheet, saveWorkbook,
+#>     setCellStyle, setColumnWidth, setRowHeight
+#> 
+#> 
+#> Attaching package: 'dplyr'
+#> 
+#> The following objects are masked from 'package:stats':
+#> 
+#>     filter, lag
+#> 
+#> The following objects are masked from 'package:base':
+#> 
+#>     intersect, setdiff, setequal, union
+#> 
+#> 
+#> Attaching package: 'lubridate'
+#> 
+#> The following object is masked from 'package:haven':
+#> 
+#>     hms
+#> 
+#> 
+#> Attaching package: 'ggvis'
+#> 
+#> The following object is masked from 'package:ggplot2':
+#> 
+#>     resolution
+#> 
+#> 
+#> Attaching package: 'networkD3'
+#> 
+#> The following object is masked from 'package:DT':
+#> 
+#>     JS
+#> 
+#> The following object is masked from 'package:leaflet':
+#> 
+#>     JS
+#> 
+#> The following object is masked from 'package:htmlwidgets':
+#> 
+#>     JS
+#> 
+#> 
+#> Welcome to googleVis version 0.5.10
+#> 
+#> Please read the Google API Terms of Use
+#> before you start using the package:
+#> https://developers.google.com/terms/
+#> 
+#> Note, the plot method of googleVis will by default use
+#> the standard browser to display its output.
+#> 
+#> See the googleVis package vignettes for more details,
+#> or visit http://github.com/mages/googleVis.
+#> 
+#> To suppress this message use:
+#> suppressPackageStartupMessages(library(googleVis))
+#> 
+#> Loading required package: nlme
+#> 
+#> Attaching package: 'nlme'
+#> 
+#> The following object is masked from 'package:dplyr':
+#> 
+#>     collapse
+#> 
+#> This is mgcv 1.8-9. For overview type 'help("mgcv-package")'.
+#> Loading required package: Matrix
+#> 
+#> Attaching package: 'Matrix'
+#> 
+#> The following object is masked from 'package:ggvis':
+#> 
+#>     band
+#> 
+#> The following object is masked from 'package:tidyr':
+#> 
+#>     expand
+#> 
+#> 
+#> Attaching package: 'lme4'
+#> 
+#> The following object is masked from 'package:nlme':
+#> 
+#>     lmList
+#> 
+#> randomForest 4.6-12
+#> Type rfNews() to see new features/changes/bug fixes.
+#> 
+#> Attaching package: 'randomForest'
+#> 
+#> The following object is masked from 'package:dplyr':
+#> 
+#>     combine
+#> 
+#> Loading required package: mvtnorm
+#> Loading required package: survival
+#> Loading required package: TH.data
+#> Loading required package: grid
+#> Loading required package: foreach
+#> foreach: simple, scalable parallel programming from Revolution Analytics
+#> Use Revolution R for scalability, fault tolerance and more.
+#> http://www.revolutionanalytics.com
+#> Loaded glmnet 2.0-2
+#> 
+#> Loading required package: lattice
+#> 
+#> Attaching package: 'caret'
+#> 
+#> The following object is masked from 'package:survival':
+#> 
+#>     cluster
+#> 
+#> 
+#> Attaching package: 'shiny'
+#> 
+#> The following objects are masked from 'package:DT':
+#> 
+#>     dataTableOutput, renderDataTable
+#> 
+#> Checking rgeos availability: TRUE
+#> 
+#> Attaching package: 'maptools'
+#> 
+#> The following object is masked from 'package:xtable':
+#> 
+#>     label
+#> 
+#> 
+#>  # ATTENTION: maps v3.0 has an updated 'world' map.        #
+#>  # Many country borders and names have changed since 1990. #
+#>  # Type '?world' or 'news(package="maps")'. See README_v3. #
+#> 
+#> 
+#> Google Maps API Terms of Service: http://developers.google.com/maps/terms.
+#> Please cite ggmap if you use it: see citation('ggmap') for details.
+#> 
+#> Attaching package: 'zoo'
+#> 
+#> The following objects are masked from 'package:base':
+#> 
+#>     as.Date, as.Date.numeric
+#> 
+#> 
+#> Attaching package: 'xts'
+#> 
+#> The following objects are masked from 'package:dplyr':
+#> 
+#>     first, last
+#> 
+#> Loading required package: TTR
+#> Version 0.4-0 included new data defaults. See ?getSymbols.
+#> 
+#> Attaching package: 'quantmod'
+#> 
+#> The following object is masked from 'package:ggvis':
+#> 
+#>     add_axis
+#> 
+#> data.table 1.9.6  For help type ?data.table or https://github.com/Rdatatable/data.table/wiki
+#> The fastest way to learn (by data.table authors): https://www.datacamp.com/courses/data-analysis-the-data-table-way
+#> 
+#> Attaching package: 'data.table'
+#> 
+#> The following object is masked from 'package:xts':
+#> 
+#>     last
+#> 
+#> The following objects are masked from 'package:lubridate':
+#> 
+#>     hour, mday, month, quarter, wday, week, yday, year
+#> 
+#> The following objects are masked from 'package:dplyr':
+#> 
+#>     between, last
+#> 
+#> 
+#> Attaching package: 'jsonlite'
+#> 
+#> The following object is masked from 'package:shiny':
+#> 
+#>     validate
+#> 
+#> 
+#> Attaching package: 'httr'
+#> 
+#> The following object is masked from 'package:caret':
+#> 
+#>     progress
+#> 
+#> Loading required package: xml2
+#> 
+#> Attaching package: 'rvest'
+#> 
+#> The following object is masked from 'package:XML':
+#> 
+#>     xml
+#> 
+#> The following object is masked from 'package:readr':
+#> 
+#>     guess_encoding
+#> 
+#> Bioconductor version 3.3 (BiocInstaller 1.21.1), ?biocLite for help
+#> 
+#> Attaching package: 'BiocGenerics'
+#> 
+#> The following objects are masked from 'package:parallel':
+#> 
+#>     clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
+#>     clusterExport, clusterMap, parApply, parCapply, parLapply,
+#>     parLapplyLB, parRapply, parSapply, parSapplyLB
+#> 
+#> The following object is masked from 'package:randomForest':
+#> 
+#>     combine
+#> 
+#> The following object is masked from 'package:Matrix':
+#> 
+#>     as.vector
+#> 
+#> The following objects are masked from 'package:lubridate':
+#> 
+#>     intersect, setdiff, union
+#> 
+#> The following objects are masked from 'package:dplyr':
+#> 
+#>     combine, intersect, setdiff, union
+#> 
+#> The following objects are masked from 'package:rJava':
+#> 
+#>     anyDuplicated, duplicated, sort, unique
+#> 
+#> The following objects are masked from 'package:generics':
+#> 
+#>     annotation, annotation<-
+#> 
+#> The following objects are masked from 'package:stats':
+#> 
+#>     IQR, mad, xtabs
+#> 
+#> The following objects are masked from 'package:base':
+#> 
+#>     anyDuplicated, append, as.data.frame, as.vector, cbind,
+#>     colnames, do.call, duplicated, eval, evalq, Filter, Find, get,
+#>     grep, grepl, intersect, is.unsorted, lapply, lengths, Map,
+#>     mapply, match, mget, order, paste, pmax, pmax.int, pmin,
+#>     pmin.int, Position, rank, rbind, Reduce, rownames, sapply,
+#>     setdiff, sort, table, tapply, union, unique, unlist, unsplit
+#> 
+#> Loading required package: S4Vectors
+#> Loading required package: stats4
+#> 
+#> Attaching package: 'S4Vectors'
+#> 
+#> The following object is masked from 'package:dplyr':
+#> 
+#>     rename
+#> 
+#> The following object is masked from 'package:testthat':
+#> 
+#>     compare
+#> 
+#> The following object is masked from 'package:base':
+#> 
+#>     expand.grid
+#> 
+#> 
+#> Attaching package: 'IRanges'
+#> 
+#> The following object is masked from 'package:data.table':
+#> 
+#>     shift
+#> 
+#> The following object is masked from 'package:sp':
+#> 
+#>     %over%
+#> 
+#> The following object is masked from 'package:vcd':
+#> 
+#>     tile
+#> 
+#> The following object is masked from 'package:Matrix':
+#> 
+#>     expand
+#> 
+#> The following object is masked from 'package:nlme':
+#> 
+#>     collapse
+#> 
+#> The following object is masked from 'package:lubridate':
+#> 
+#>     %within%
+#> 
+#> The following object is masked from 'package:tidyr':
+#> 
+#>     expand
+#> 
+#> The following objects are masked from 'package:dplyr':
+#> 
+#>     collapse, desc, slice
+#> 
+#> Welcome to Bioconductor
+#> 
+#>     Vignettes contain introductory material; view with
+#>     'browseVignettes()'. To cite Bioconductor, see
+#>     'citation("Biobase")', and for packages 'citation("pkgname")'.
+#> 
+#> 
+#> Attaching package: 'Biobase'
+#> 
+#> The following object is masked from 'package:httr':
+#> 
+#>     content
+#> 
+#> 
+#> Attaching package: 'AnnotationDbi'
+#> 
+#> The following object is masked from 'package:dplyr':
+#> 
+#>     select
+#> 
+#> Loading required package: XVector
+#> 
+#> Attaching package: 'Biostrings'
+#> 
+#> The following object is masked _by_ '.GlobalEnv':
+#> 
+#>     tb
+#> 
+#> 
+#> Attaching package: 'limma'
+#> 
+#> The following object is masked from 'package:BiocGenerics':
+#> 
+#>     plotMA
+#> 
+#> 
+#> Attaching package: 'Rsamtools'
+#> 
+#> The following object is masked from 'package:zoo':
+#> 
+#>     index
+#> 
+#> 
+#> Attaching package: 'genefilter'
+#> 
+#> The following object is masked from 'package:car':
+#> 
+#>     Anova
+#> 
+#> The following object is masked from 'package:base':
+#> 
+#>     anyNA
+#> 
+#> 
+#> Attaching package: 'graph'
+#> 
+#> The following object is masked from 'package:Biostrings':
+#> 
+#>     complement
+#> 
+#> The following object is masked from 'package:XML':
+#> 
+#>     addNode
+#> 
+#> The following object is masked from 'package:stringr':
+#> 
+#>     boundary
+#> 
+#> Loading required package: SummarizedExperiment
+#> 
+#> Attaching package: 'GenomicAlignments'
+#> 
+#> The following object is masked from 'package:data.table':
+#> 
+#>     last
+#> 
+#> The following objects are masked from 'package:xts':
+#> 
+#>     first, last
+#> 
+#> The following objects are masked from 'package:dplyr':
+#> 
+#>     first, last
+#> 
+#> 
+#> Attaching package: 'affy'
+#> 
+#> The following object is masked from 'package:lubridate':
+#> 
+#>     pm
 
 all <- expand.grid(CRAN = CRAN, Bioconductor = Bioc, stringsAsFactors = FALSE)
 

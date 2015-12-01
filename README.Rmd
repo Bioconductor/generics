@@ -14,6 +14,9 @@ knitr::opts_chunk$set(
 )
 ```
 
+[![Travis-CI Build Status](https://travis-ci.org/Bioconductor/generics.svg?branch=master)](https://travis-ci.org/Bioconductor/generics)
+[![Coverage Status](https://img.shields.io/codecov/c/github/Bioconductor/generics/master.svg)](https://codecov.io/github/Bioconductor/generics?branch=master)
+
 # Summary of Conflicting Functions #
 ```{r}
 # Get all conflicting functions from two namespaces
@@ -107,6 +110,8 @@ Bioc <- c(
 "affy",
 "BSgenome",
 "geneplotter")
+
+invisible(lapply(c(CRAN, Bioc), library, character.only = TRUE))
 
 all <- expand.grid(CRAN = CRAN, Bioconductor = Bioc, stringsAsFactors = FALSE)
 
