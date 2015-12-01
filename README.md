@@ -112,10 +112,18 @@ gen_defs <- function(namespace) {
 filter_defs <- c(gen_defs("methods"),
                  gen_defs("BiocGenerics"))
 
+in_defs <- function(x, defs) {
+    any(as.logical(
+        lapply(defs,
+            function(xx) {
+                identical(xx, x) || .hasSlot(xx, "default") && identical(xx@default@.Data, x)
+            })))
+}
+
 filter_methods <- function(x, package) {
     if (!length(x)) return(x)
     funs <- lapply(x, get, envir = asNamespace(package), mode = "function")
-    in_methods <- vapply(funs, function(x) any(as.logical(lapply(filter_defs, function(xx) identical(xx, x) || .hasSlot(xx, "default") && identical(xx@default@.Data, x)))), logical(1))
+    in_methods <- vapply(funs, in_defs, logical(1), defs = filter_defs)
     x[!in_methods]
 }
 
