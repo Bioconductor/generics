@@ -3,6 +3,7 @@
 \docType{methods}
 \name{annotation,testS4-method}
 \alias{annotation,testS4-method}
+\title{Annotation accessor for testS4}
 \usage{
 \S4method{annotation}{testS4}(object, ...)
 }
@@ -11,8 +12,7 @@
 
 \item{...}{Additional arguments ignored}
 }
-\section{Methods (by class)}{
-\itemize{
-\item \code{testS4}: Annotation accessor for testS4
-}}
+\description{
+Annotation accessor for testS4
+}
 
