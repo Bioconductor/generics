@@ -14,7 +14,7 @@ annotation.testS3 <- function(object, ...) {
     object
 }
 
-#' @export
+#' @export testS4
 testS4 <- setClass("testS4", slots = c(annotation = "character"))
 
 setMethod("initialize", "testS4",

@@ -30,7 +30,7 @@ local({
 
   test_that("annotation works for S4 objects", {
 
-      t1 <- testPkg:::testS4()
+      t1 <- testS4()
       expect_identical(t1@annotation, "S4")
       expect_identical(annotation(t1), "S4")
       expect_identical(annotation(t1), t1@annotation)
@@ -58,7 +58,7 @@ local({
   })
   test_that("annotation<- works for S4 objects", {
 
-      t1 <- testPkg:::testS4()
+      t1 <- testS4()
       expect_identical(t1@annotation, "S4")
 
       annotation(t1) <- "testing"

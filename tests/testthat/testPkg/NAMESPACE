@@ -3,7 +3,7 @@
 export("annotation<-.testS3")
 export(annotation.testS3)
 export(testS3)
-exportClasses(testS4)
+export(testS4)
 exportMethods("annotation<-")
 exportMethods(annotation)
 import(generics)
