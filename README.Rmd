@@ -111,7 +111,7 @@ Bioc <- c(
 "BSgenome",
 "geneplotter")
 
-invisible(lapply(c(CRAN, Bioc), library, character.only = TRUE))
+suppressPackageStartupMessages(invisible(lapply(c(CRAN, Bioc), library, character.only = TRUE, quietly = TRUE)))
 
 all <- expand.grid(CRAN = CRAN, Bioconductor = Bioc, stringsAsFactors = FALSE)
 
