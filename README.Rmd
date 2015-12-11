@@ -17,6 +17,12 @@ knitr::opts_chunk$set(
 [![Travis-CI Build Status](https://travis-ci.org/Bioconductor/generics.svg?branch=master)](https://travis-ci.org/Bioconductor/generics)
 [![Coverage Status](https://img.shields.io/codecov/c/github/Bioconductor/generics/master.svg)](https://codecov.io/github/Bioconductor/generics?branch=master)
 
+# Example packages using generics package #
+## select ##
+ - https://github.com/jimhester/dplyr/tree/generics - https://travis-ci.org/hadley/dplyr/jobs/96281463#L1445-L1540
+ - https://github.com/jimhester/AnnotationDbi/tree/generics - https://gist.github.com/jimhester/8044628a6183c118ce0b
+ - https://github.com/jimhester/GenomicFeatures/tree/generics
+
 # Summary of Conflicting Functions #
 ```{r}
 # Get all conflicting functions from two namespaces
