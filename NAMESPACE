@@ -2,4 +2,5 @@
 
 export("annotation<-")
 export(annotation)
+export(select)
 import(methods)

@@ -15,12 +15,8 @@ NULL
 #'    \item \code{\link[methods]{selectMethod}} for getting the definition of
 #'          a specific method.
 #'
-#'    \item \link[Biobase]{annotation,eSet-method} in the \pkg{Biobase} package
-#'          for an example of a specific \code{annotation} method (defined for
-#'          \link[Biobase]{eSet} objects).
-#'
-#'    \item \link{BiocGenerics} for a summary of all the generics defined
-#'          in the \pkg{BiocGenerics} package.
+#'    \item \link{generics} for a summary of all the generics defined
+#'          in the \pkg{generics} package.
 #'  }
 #' @examples
 #' annotation
@@ -36,3 +32,9 @@ setGeneric("annotation",
 setGeneric("annotation<-",
     function(object, ..., value) UseMethod("annotation<-")
 )
+
+#' Select Generic
+#' @param x An object.
+#' @param ... Additional arguments, for use in specific methods.
+#' @export
+setGeneric("select", function(x, ...) UseMethod("select"))
