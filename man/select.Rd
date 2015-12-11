@@ -4,12 +4,12 @@
 \alias{select}
 \title{Select Generic}
 \usage{
-select(x, ...)
+select(.data, ...)
 }
 \arguments{
-\item{x}{An object.}
-
 \item{...}{Additional arguments, for use in specific methods.}
+
+\item{x}{An object.}
 }
 \description{
 Select Generic

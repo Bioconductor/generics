@@ -37,4 +37,4 @@ setGeneric("annotation<-",
 #' @param x An object.
 #' @param ... Additional arguments, for use in specific methods.
 #' @export
-setGeneric("select", function(x, ...) UseMethod("select"))
+setGeneric("select", function(.data, ...) UseMethod("select"))
